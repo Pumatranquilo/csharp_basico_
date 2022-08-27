@@ -269,6 +269,42 @@ namespace Helloworld
                 Console.WriteLine("falso");
             }*/
 
+            //12 UTILIZANDO OPERADORES E CONDÇÕES EM UM PROGRAMA (PRÁTICA)
+            /* Nestas linhas de código vamos estar utiizando o que aprendemos até aqui
+             para desenvolver um programa que verifica a idade de um usuário e retorna uma mensagem
+            informando se este usuário é criança, adolescente ou adulto*/
+
+            /*Console.WriteLine("Olá usuário. Por favor digite a sua idade e em seguida a tecla Enter.");
+            int idade = int.Parse(Console.ReadLine());
+
+            if (idade >= 0 && idade <= 11)
+            {
+                Console.WriteLine("Você é criança.");
+            }
+
+            else if (idade >= 12 && idade <= 17)
+            {
+                Console.WriteLine("Você é adolescente.");
+            }
+            else
+            {
+                Console.WriteLine("Você é adulto");
+            } 
+
+            /* Amalisando o código acima: podemos notar que neste software acima utilizamos 
+             algo novo, o termo "Parse" int.Parse é utilizado para converter os valores numéricos
+            digitados pelo usuário em texto, uma vez, que o c# interpreta todas as entradas como texto.
+            Além do mais utilizamos 3 possibilidades para o nosso programa:
+            if (se) o usuário tiver entre 0 e 11 anos ele é criança;
+            else if (senão, se) entre 12 e 17 anos, é um adolescente;
+            else (senão) caso nenhuma destas condições sejam verdadeiras, acima de 17 anos
+            o usuário é adulto.
+            Aproveita para praticar e utilize este mesmo programa para verificar outras possibilidades
+            como um tanque de combustível com condições indicando ao motorista se já está na hora
+            de abastecer ou não, ou para verificar tarefas do dia da semana */
+
+
+
 
 
             Console.ReadLine();
