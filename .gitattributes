@@ -1,4 +1,4 @@
-using System;
+sing System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -303,11 +303,101 @@ namespace Helloworld
             como um tanque de combustível com condições indicando ao motorista se já está na hora
             de abastecer ou não, ou para verificar tarefas do dia da semana */
 
+            // 13 FUNÇÕES
+            /* As funções são utilizadas para otimizar o nosso código em termos de linhas de programação.
+               No exemplo acima note que escrevemos diversas linhas para serem exibidas para o usuário, 
+            utilizando funções descartamos a necessidade de escrever as mensagens linha por linha e atri-
+            buir estas mensagens a uma variável.
+            Vejamos o exemplo a seguir de como elaborar uma função:
+            para isto utilizamos a palavra "static" (função do tipo static), em seguida "void" (tipo
+            de função vazia) e atribuímos um nome para esta função com (). 
 
+            Mensagem(); //funções
+             Mensagem2(); // podemos "chamar" uma função mais de uma vez (útil para evitar escrever a mesma frase várias vezes).
+            Mensagem3(); 
+              Mensagem3();
+            Mensagem();
+              Mensagem2();
 
+            mostrarDia(10);// parâmetro da função mostrarDia
+
+            estoqueProduto("sabão ", 14.9f);
+            estoqueProduto2("shampoo ", 500);
+
+            calculoFornecedor(100);
+            calculoFornecedor(-70);
+            calculoFornecedor(90);
+            calculoFornecedor(205.15f);
 
 
             Console.ReadLine();
+        }         
+                static void Mensagem() //atribuindo funções 
+         {
+             Console.WriteLine("Olá _________(campo com o nome do usuário.");
+            Console.WriteLine("Não temos reuniões agendadas para hoje.");
         }
-    }
-}
+                static void Mensagem2()
+         {
+             Console.WriteLine("Olá_________(campo com o nome do usuário.");
+            Console.WriteLine("Hoje temos uma reunião agendada para as 14:35.");
+        }
+                static void Mensagem3()
+         { 
+             Console.WriteLine("Olá_________(campo com o nome do usuário.");
+            Console.WriteLine("Hoje temos uma reunião agendada para às 22:47.");
+        } 
+        
+        static void mostrarDia(int dia) //nesta finção foi atribuído um parâmetro (dentro dos párênteses).
+        {
+            Console.WriteLine(dia); 
+        }
+
+        static void estoqueProduto(string prod, float qnt)
+        {
+            Console.WriteLine("Nome do produto e quantidade: " + prod + qnt + " kg"); //nesta linha de código utilizei um novo recurso, a concatenação (junção, união) através do sinal de "+" para unir dois ou mais trechos ou textos.
+            
+        }
+        static void estoqueProduto2(string prod, float qnt)
+        {
+            Console.WriteLine("Nome do produto e quantidade: " + prod + qnt + " ml");
+        }
+
+        static void calculoFornecedor(float preco)
+        {
+            float precoFornecedorAbs = Math.Abs(preco);//utilizei esta fu~ção para evitar calcular números negativos, na linha 328 determinei como -70 o preço mas percebam que mesmo assim o calculo ignorou o valor negativo. Portanto se o usuário digitar acidentalmente um valor negativo o programa entenderá como um valor positivo.
+            float precoFornecedor = precoFornecedorAbs - 40;
+            Console.WriteLine("Preço real do produto: " + " R$ " + precoFornecedor);
+        }*/
+
+            //14 RETORNANDO FUNÇÕES
+            /* Os retornos de funções são utilizados quando queremos retornar um valor para o usuário
+             após  o nosso programa efetuar o registro de algo, para isto utilizamos um tipo de função
+            esta função pode ser do tipo int, float, string, bool ou char dependo do tipo de entrada
+            que vamos trabalhar. A seguir vou estar exemplificando alguns cálculos matemáticos utilizando
+            retorno e função*/
+
+
+            int soma = Somar(1, 2, 3);
+            Console.WriteLine(soma);
+
+            float multi = Multiplicar(10.2f, 2.05f, 1.85f);
+            Console.WriteLine(multi);
+
+            Console.ReadLine();
+        }
+        static int Somar(int a, int b, int c)
+
+        {
+            int somaFinal = a + b + c;
+            return somaFinal;//atribuição do retorno da função
+        }
+
+        static float Multiplicar(float x, float y, float z)
+        {
+            float multiFinal = x * y * z;
+            return multiFinal;
+        }
+
+        }
+         }
