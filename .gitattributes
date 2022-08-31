@@ -1,4 +1,4 @@
-sing System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +8,7 @@ namespace Helloworld
 {
     internal class Program
     {
+        enum carros {Golf, Honda, Peugeot, Voyage}
         static void Main(string[] args)
         {
 
@@ -375,7 +376,7 @@ namespace Helloworld
              após  o nosso programa efetuar o registro de algo, para isto utilizamos um tipo de função
             esta função pode ser do tipo int, float, string, bool ou char dependo do tipo de entrada
             que vamos trabalhar. A seguir vou estar exemplificando alguns cálculos matemáticos utilizando
-            retorno e função*/
+            retorno e função
 
 
             int soma = Somar(1, 2, 3);
@@ -397,7 +398,82 @@ namespace Helloworld
         {
             float multiFinal = x * y * z;
             return multiFinal;
-        }
+        }*/
 
+            // 15 ARRAYS
+            /* Um array "[]" (símboloo utilizado) é uma forma de evitar a repetição quando precisamos declarar diversos
+             itens, de uma forma inicial teríamos que declarara as variáveis uma por uma, porém
+            ao utilizarmos arrays basta definir um método array e dentro do mesmo definir um valor
+            (quantidade de itens descritos) e em seguida escrevermos os itens
+
+            string[] itens = new string[8]//definir um valor de itens, precisa ser exatamente a mesma quantidade, porém a contagem começa a partir do número zero.
+            {
+                "chápeu",//0
+                "pedra",//1
+                "árvore",//2
+                "fonte",//3
+                "escada",//4
+                "baú",//5
+                "corrente",//6
+                "adaga",//7
+            }; 
+             
+
+            itens[2] = "pinheiro"; //campo utilizado para trocar/atualizar o nome do item sem precisar acessar o bloco entre"{}".
+            Console.WriteLine(itens[2]);//local onde digitamos o número correspondente ao item
+            
+            Console.ReadLine();
+
+            int[] numeros = {1, 20, 80, 35, 800};//outra maneira de construir arrays.
+        }*/
+
+            // 16 SWITCH
+            /* Basicamente este tipo de estrutura condicional (switch) pode ser utilizado da mesma forma
+             que utilizamos o if, o else e o else if. Porém quando precisamos repetir muitas sentenças
+            podemos utilizar as condições "switch", pois elas nos ajudam a obter linhas de código mais organizadas
+            além de proporcionar maior eficiência no desenvolvimento do nosso programa.
+            Abaixo estarei demonstrando como elaboramos este tipo de estrutura utilizando switch:
+
+            {
+                string nome = "Amanda"; //definimos uma variável (float, string, int etc);
+
+                switch (nome) //estrutura condicional com a variávem;
+                {
+                    case "Bruno":// a partir daqui o switch irá verificar cada "case" (caso) para encontrar qual linha lógica/de código corresponde à função nome;
+                        Console.WriteLine("Seu nome é Bruno.");
+                        break;
+
+                    case "Antonio":
+                        Console.WriteLine("Seu nome é Antonio.");
+                        break;
+
+                    case "Amanda":
+                        Console.WriteLine("Amanda");
+                        break;
+
+                    case "Flávio":
+                        Console.WriteLine("Seu nome é Flávio.");
+                        break;
+
+                    default://este default é utilizado para otimizar o programa, ou seja, caso o switch não encontre nada que corresponda com a variável nome no caso "Amanda" irá ser exibida uma mensagem no console do usuário.
+                        Console.WriteLine("Nenhum nome corresponde à variável nome");
+                        break;
+                }
+                Console.ReadLine();//efetuem o exercício de substituir o nome da variável "Amanda" em (string nome = "Amanda") pelos nomes dos casos e substituir também por um nome que não está em nenhum dos casos.
+            }*/
+
+            //17 ENUM
+            /* Enum de enumerador ou enumeradores (isto ocorre devido ao fato de que para cada valor escrito dentro do enum o c# atribui um número) em pottuguês é uma forma simples de trabalharmos com 
+             variáveis em nosso programa, quando definimos um enum, dentro dele escrevemos tudo o que
+            estará contido em uma variável x hipotética e toda vez que utilizarmos esta variável ela estará
+            limitada somente ao que definimos dentro do enum. Observação! O enum está escrito na linha
+            de código número 11*/
+                
+            {
+                carros nomeCarro = carros.Golf;
+                Console.WriteLine(nomeCarro);
+            }
+            Console.ReadLine();
         }
-         }
+    }
+}
