@@ -8,7 +8,9 @@ namespace Helloworld
 {
     internal class Program
     {
-        enum carros {Golf, Honda, Peugeot, Voyage}
+        enum carros { Golf, Honda, Peugeot, Voyage }
+
+        enum menu { Guerreiro = 1, Espadachim, Pirata, Explorador }
         static void Main(string[] args)
         {
 
@@ -467,13 +469,139 @@ namespace Helloworld
              variáveis em nosso programa, quando definimos um enum, dentro dele escrevemos tudo o que
             estará contido em uma variável x hipotética e toda vez que utilizarmos esta variável ela estará
             limitada somente ao que definimos dentro do enum. Observação! O enum está escrito na linha
-            de código número 11*/
+            de código número 11
                 
             {
                 carros nomeCarro = carros.Golf;
                 Console.WriteLine(nomeCarro);
             }
             Console.ReadLine();
-        }
+        }*/
+
+            //18 ENUM INTERAGINDO COM SWTCH 
+            /*Nesta parte do código desenvolvido vamos estar acompanhando como o enum pode interagir
+             com switch e para isto vamos estar elaborando um menu que irá exibir no console algumas
+            opções para que o usuário possa escolher, vamos determinar números e quando o usuário
+            digitar um dos números corresponderá a um personagem selecionado. Na linha de código número 13
+            já deixei escrito a linha enum com a variável "menu" e os personegens, notem que para o primeiro
+            personagem digitei "= 1" logo após o nome, se não fizermos isto caso o usuário optar por selecionar
+            o guerreiro e digitar 1 no console/menu será selecionado o espadachim e isto se deve porque o enum começa a contar a partir
+            do "0", portando ele "entenderá" que o usuário quis selecionar o segundo item e uma maneira de controlar isto é atribuindo um número para o que estiver atribuído ao enum.
+
+            Console.WriteLine("Olá usuário, por favor selecione uma das opções a seguir para continuar e em seguida aperte a tecla Enter:");
+            Console.WriteLine(" 1 - Guerreiro\n 2 - Espadachim\n 3 - Pirata\n 4 - Explorador\n"); //ao utilizar "\n" estamos codificando para que o texto ou frase pule uma linha, ou seja, o próximo item será escrita uma linha abaixo.
+
+            int index = int.Parse(Console.ReadLine()); //linha de código para capturar o que o usuário irá digitar/selecionar. Como estamos utilizando valores numéricos utilizamos "Parse" para fazer a conversão para texto.
+            menu personagemSelecionado = (menu)index;
+
+            // Console.WriteLine(menuSelecionado);//até aqui não utilizamos o switch neste menu. Ao atribuir o switch para o menu deixe esta linha como comentário para que não haja conflitos dentro so programa.
+
+
+            switch (personagemSelecionado)//capturar o que o usuário selecionou
+            {
+                case menu.Guerreiro://caso selecionar guerreiro escrever algo na próxima linha
+                    Console.WriteLine(" Você selecionou o guerreiro. Deseja confirmar e continuar?");//caso uma opção seja selecionada algo será exibido no console/menu
+                    break;//conclusão/parada para que o programa não prossiga de forma indefinida.
+                          
+                case menu.Espadachim:
+                    Console.WriteLine(" Você selecionou o espadachim. Deseja confirmar e continuar?");
+                    break;
+
+                case menu.Pirata:
+                    Console.WriteLine(" Você selecionou o pirata. Deseja confirmar e continuar?");
+                    break;
+
+                case menu.Explorador:
+                    Console.WriteLine(" Você selecionou o explorador. Deseja confirmar e continuar?");
+                    break;
+
+                default:
+                    Console.WriteLine("Esta opção não está disponível, por favor selecione uma das opções disponíveis.");
+                    break;
+            }
+            Console.ReadLine();
+
+        }*/
+
+            //19 WHILE
+            /* A estrutura de comando do tipo while é muito utilizada quando queremos atribuir uma
+             repetição em nosso código/programa, uma vez que, a estrutura while é uma estrutura de repetição
+            e um bom exemplo seria associar esta esta estrutura ao desenvolvimento de um contador, pois enquanto
+            "while" a condição for verdadeira o programa continuará executando o que estiver contido entre "{}"  (o bloco de comando).
+
+            int contador = 0;
+
+            while (contador </*=ao adicionar o sinal de igual logo após o < o contador irá contar até o número dez 10)//repetição/loop infinito.
+            {
+              
+                Console.WriteLine("Contagem iniciada incrementando +1");//lógica de repetição
+                Console.WriteLine(contador +1);//qual número o contador está
+                contador = contador + 1;//limitador para a condição não ficar infinitamente em loop. nesta linha de código definimos que pós o contador contar zero e exibix a mensagem no console será incrementado/acrescentado +1 ao contador e isso se repete até chegar ao valor 9 quando a condição se torna falsa e o contador para e segue para fora do bloco, onde exibe a próxima mensagem.
+                //contador+=1;// outra maneira de adicionar o +1 à variável contador;
+                //contador++;//outra maneira de adicionar o +1 à variável contador.
+            }
+            Console.WriteLine("A contagem chegou ao fim contador = 9. O contador para em 9 por que a condição\nwhile só irá ser executada enquanto contador < que 10.");
+            Console.ReadLine();
+        }*/
+
+            //20 DO WHILE
+            /* Enquanto a condição while executa o código primeiro e só depois verifica se existe uma condição falsa,
+             a condoção do while que vamos abordar neste tópico interage de forma inversa, primeiro ela verifica
+            o código, pelo menos uma vez, e só então após isto ela executa o código
+
+            int contadorverdadeiro = 0;
+            do
+            {
+                Console.WriteLine("Verificando o código primeiro para encontrar condições falsas.");
+                Console.WriteLine(contadorverdadeiro + 1);
+                contadorverdadeiro++;
+            }
+            while (contadorverdadeiro < 100);
+            //while (10 < 0);//nesta situação o código é executado mesmo a condição sendo falsa, pois 10 não é menor que zero.
+
+            Console.WriteLine("Fim da execussão.");
+
+            Console.ReadLine();
+        }*/
+
+            //21 FOREACH
+            /*A estrutura "foreach" é uma maneira de exibir uma sequência de arrays. Muito útil para
+             a elaboração de menus
+
+            string[] personagens = { "explorador", "pirata", "médico" };
+
+            foreach (string personagem in personagens) //linha de código referente à estrutura foreach
+            {
+                Console.WriteLine(personagem);
+            }
+            Console.ReadLine();
+        }*/
+
+            //22 FOR
+            /* A estrutura de repetição "for" também pode ser utilizada da mesm maneira ou para os mesmos
+             fins que utilizamos a estrutura "while" no desenvolvimento de um contador. Porém ao utilizarmos
+            a estrutura "for", mbora seja um pouco mais complexa para escrever a linha de código a sua
+            estrutura é mais limpa, pois necessita de menos linhas de código que a estrutura "while".
+
+            for (int contador = 0; contador < 100; contador++)
+            {
+                Console.WriteLine(contador +1);
+                Console.WriteLine("Executando o contador.");
+            }
+            Console.ReadLine();
+        }*/
+
+            //23 ESCOPO
+            /*Este tipo de estrutura é utilizado quando queremos o u precisamos interagir de maneira
+             mais flexivel com variáveis dentro do programa. As variáveis geralmente são elaboradas de forma
+            local, ou seja, estas variáveis só podem ser acessadas dentro da função ou bloco de códigos 
+            a qual aquela variável pertence, caso haja a necessidade de acessar/escrever esta variável em
+            uma outra linha de código fora da sua função inicial irá ocorrer erro em nosso código e a
+            variável não será acessada. Para solucionar isto utilizamos o tipo de escolo global, onde
+            ao desenvolver/escrever uma nova variável esta poderar ser acessada em outros locais 
+            do nosso programa
+
+            static string variavelglobal = "acessoglobal";//modo de declaração de uma variável global para que possamos acessá-la em outros locais dentro do programa.
+
     }
-}
+}*/
